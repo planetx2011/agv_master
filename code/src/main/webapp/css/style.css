@@ -1,0 +1,30 @@
+#viewport {
+    position: relative;
+}
+
+#canvas {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.control-label{
+    text-align: left;
+}
+#loginDiv {
+    width: 500px;
+    border: 1px solid red;
+    margin: 0 auto;
+    margin:450px;
+    /*height:100px;*/
+    /*line-height:100px;*/
+    /*background:#ccc*/
+}
+#loginDiv button{
+    margin-left: 380px;
+}
+#loginDiv label{
+    margin-right: 50px;
+}
+#loginDiv .form-group{
+    margin: 20px;
+}
