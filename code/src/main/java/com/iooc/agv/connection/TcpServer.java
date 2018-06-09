@@ -11,7 +11,7 @@ public class TcpServer {
 
 	public void startServer() {
 		try {
-			server = new ServerSocket(10000);
+			server = new ServerSocket(9999);
 			
 			while (true) {
 				Socket client = server.accept();
