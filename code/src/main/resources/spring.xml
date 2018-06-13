@@ -4,4 +4,31 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
+	<!-- 定义数据源Bean -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<!-- 指定连接数据库的驱动 -->
+		<property name="driverClassName" value="org.sqlite.JDBC" />
+		<!-- 指定连接数据库的URL -->
+		<property name="url" value="jdbc:sqlite:E:/agv.db" />
+	</bean>
+
+
+
+	<!--mybatis和Spring完美整合 ，不需要mybatis的配置映射文件 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<!--自动扫描mapping.xml文件 <property name="mapperLocations" value="classpath:mapping/*.xml" 
+			/> -->
+		<property name="configLocation" value="classpath:mybatis-config.xml"></property>
+	</bean>
+
+	<!--DAO接口所在包名，Spring会自动查到旗下的类 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.iooc.agv.mapper" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+	</bean>
+
+
+
 </beans>
