@@ -19,6 +19,8 @@
 		<log4j.version>1.2.17</log4j.version>
 		<!-- spring版本号 -->
 		<spring.version>4.1.1.RELEASE</spring.version>
+
+		<mybatisspring.version>1.2.0</mybatisspring.version>
 	</properties>
 	<dependencies>
 		<!-- 用于spring mvc 项目开发需要 -->
@@ -49,7 +51,11 @@
 			<artifactId>spring-context-support</artifactId>
 			<version>4.1.7.RELEASE</version>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>4.1.1.RELEASE</version>
+		</dependency>
 		<dependency>
 			<groupId>org.freemarker</groupId>
 			<artifactId>freemarker</artifactId>
@@ -116,6 +122,27 @@
 			<artifactId>commons-beanutils</artifactId>
 			<version>1.9.3</version>
 		</dependency>
+		<!-- mybatis -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>${mybatis.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>${mybatisspring.version}</version>
+		</dependency>
+		<!-- 本地lib引用驱动 
+		<dependency>
+			<groupId>org.sqlite</groupId>
+			<artifactId>sqlite-jdbc</artifactId>
+			<version>3.20.1</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/lib/sqlite-jdbc-3.20.1.jar</systemPath>
+		</dependency>-->
 	</dependencies>
-
+	<!-- 强制设置JDK编译版本为1.8 <build> <plugins> <plugin> <groupId>org.apache.maven.plugins</groupId> 
+		<artifactId>maven-compiler-plugin</artifactId> <configuration> <source>${java.version}</source> 
+		<target>${java.version}</target> </configuration> </plugin> </plugins> </build> -->
 </project>
