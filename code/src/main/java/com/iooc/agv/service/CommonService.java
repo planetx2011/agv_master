@@ -22,8 +22,6 @@ public class CommonService {
 	@RequestMapping(value = "/checkout", method = RequestMethod.GET)
 	public @ResponseBody Object checkOutUser(@RequestParam("userName") String userName, @RequestParam("password")String password) {
 		List<User> userList = userDao.selectAllUser();
-		// ModelAndView modelAndView=new ModelAndView();
-		// modelAndView.setViewName("/WEB-INF/jsp/test.jsp");//重定向为"redirect:url路径"
 		return userList.stream().filter(item -> !StringUtils.isEmpty(userName) && !StringUtils.isEmpty(password)
 				&& userName.equals(item.getUserName()) && password.equals(item.getPassword())).count() != 0;
 	}

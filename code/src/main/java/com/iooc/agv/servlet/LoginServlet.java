@@ -28,6 +28,7 @@ public class LoginServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String userName = request.getParameter("userName");
 		String password = request.getParameter("password");
+		// #TOOD# password need encrypted and can't be compared directed
 		List<User> userList = userDao.selectAllUser();
 		if (userList.stream().filter(item -> userName.equals(item.getUserName()) && password.equals(item.getPassword()))
 				.count() == 0) {
