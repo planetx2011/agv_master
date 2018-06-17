@@ -1,0 +1,29 @@
+user_info
+	userID
+	userName
+	userLevel
+	userPassword
+
+agv_base
+	agv_id
+	agv_name
+	agv_ip
+	agv_type
+	agv_use_status
+	
+rfid_num_coordinate
+	rfid_num
+	line_num
+	rfid_name
+	pos_x
+	pos_y
+
+agv_route_info // contain on ring
+	agv_id
+	route_id
+	rfid_num
+	line_num
+	dest_site
+	is_reached
+	
+	
