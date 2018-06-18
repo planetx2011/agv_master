@@ -1,9 +1,5 @@
 package com.iooc.agv.model;
 
-/**
- * 用户描述
- *
- */
 public class User {
 	private Integer userID;
 	private String userName;
@@ -16,10 +12,6 @@ public class User {
 
 	public void setUserID(Integer userID) {
 		this.userID = userID;
-	}
-
-	public void setUserLevel(Integer userLevel) {
-		this.userLevel = userLevel;
 	}
 
 	public String getUserName() {
@@ -42,8 +34,7 @@ public class User {
 		return userLevel;
 	}
 
-	public void setUserLevel(int userLevel) {
+	public void setUserLevel(Integer userLevel) {
 		this.userLevel = userLevel;
 	}
-
 }

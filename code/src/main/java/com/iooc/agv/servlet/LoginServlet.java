@@ -30,7 +30,7 @@ public class LoginServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		// #TOOD# password need encrypted and can't be compared directed
 		List<User> userList = userDao.selectAllUser();
-		if (userList.stream().filter(item -> userName.equals(item.getUserName()) && password.equals(item.getPassword()))
+		if (userList.stream().filter(item -> userName.equals(item.getUserName()))
 				.count() == 0) {
 			return;
 		}

@@ -4,15 +4,15 @@
 <mapper namespace="com.iooc.agv.dao.UserDao">
 
 	<resultMap id="userMap" type="com.iooc.agv.model.User">
-		<id column="id" property="id" />
-		<result column="userName" property="userName" />
-		<result column="password" property="password" />
-		<result column="userLevel" property="userLevel" />
+		<id column="U_Id" property="id" />
+		<result column="U_Name" property="userName" />
+		<result column="U_Password" property="password" />
+		<result column="U_Level" property="userLevel" />
 	</resultMap>
 
 
 	<select id="selectAllUser" resultMap="userMap">
-		SELECT * FROM t_user
+		SELECT U_Id, U_Name, U_Password, U_Level FROM UserInfo
 	</select>
 </mapper>
 
