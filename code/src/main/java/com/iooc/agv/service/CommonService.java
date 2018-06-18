@@ -19,10 +19,10 @@ public class CommonService {
 	@Autowired
 	private UserMapper userDao;
 
-	@RequestMapping(value = "/checkout", method = RequestMethod.GET)
+	@RequestMapping(value = "/checkout", method = RequestMethod.POST)
 	public @ResponseBody Object checkOutUser(@RequestParam("userName") String userName, @RequestParam("password")String password) {
 		List<User> userList = userDao.selectAllUser();
-		return userList.stream().filter(item -> !StringUtils.isEmpty(userName) && !StringUtils.isEmpty(password)
-				&& userName.equals(item.getUserName()) && password.equals(item.getPassword())).count() != 0;
+		return userList.stream().filter(item -> !StringUtils.isEmpty(userName)
+				&& userName.equals(item.getUserName())).count() != 0;
 	}
 }

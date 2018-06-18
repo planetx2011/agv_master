@@ -2,8 +2,12 @@ package com.iooc.agv.model;
 
 public class AgvState {
 	private int id;
-	private Coordinate coordinate;
-	private int offset;
+	
+	private int error;
+	
+	private int runningStatus;
+	
+	private int direct;
 
 	public int getId() {
 		return id;
@@ -13,20 +17,29 @@ public class AgvState {
 		this.id = id;
 	}
 
-	public Coordinate getCoordinate() {
-		return coordinate;
+	public int getError() {
+		return error;
 	}
 
-	public void setCoordinate(Coordinate coordinate) {
-		this.coordinate = coordinate;
+	public void setError(int error) {
+		this.error = error;
 	}
 
-	public int getOffset() {
-		return offset;
+	public int getRunningStatus() {
+		return runningStatus;
 	}
 
-	public void setOffset(int offset) {
-		this.offset = offset;
+	public void setRunningStatus(int runningStatus) {
+		this.runningStatus = runningStatus;
 	}
 
+	public int getDirect() {
+		return direct;
+	}
+
+	public void setDirect(int direct) {
+		this.direct = direct;
+	}
+	
+	
 }
