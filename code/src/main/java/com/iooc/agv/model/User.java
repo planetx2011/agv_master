@@ -1,13 +1,26 @@
 package com.iooc.agv.model;
 
 /**
- * 用户信息
+ * 鐢ㄦ埛鎻忚堪
  *
  */
 public class User {
+	private Integer userID;
 	private String userName;
 	private String password;
 	private Integer userLevel;
+		
+	public Integer getUserID() {
+		return userID;
+	}
+
+	public void setUserID(Integer userID) {
+		this.userID = userID;
+	}
+
+	public void setUserLevel(Integer userLevel) {
+		this.userLevel = userLevel;
+	}
 
 	public String getUserName() {
 		return userName;
