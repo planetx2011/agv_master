@@ -12,3 +12,9 @@ CREATE TABLE AgvPosition(Agv_Id integer NOT NULL, RfidNo integer NOT NULL )
 
 -- AGV状态表
 CREATE TABLE AgvState(Agv_id integer NOT NULL PRIMARY KEY, error integer NOT NULL, updateTime integer NOT NULL)
+
+-- AGV任务记录表
+CREATE TABLE AgvTaskRecord(Agv_id integer NOT NULL PRIMARY KEY, taskNma varchar(50) NOT NULL, taskDescript varchar(500) NOT NULL, endTime date not null)
+
+-- AGV异常状态表
+CREATE TABLE AgvAbnormalRecord(Agv_id integer NOT NULL PRIMARY KEY, statusInfo varchar(100) NOT NULL, rfidNo integer NOT NULL, occurTime date not null)
