@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Insert title here</title>
+
+    <link rel="stylesheet" type="text/css" href="3rdlib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+
+<ul class="nav nav-tabs" id="myTab">
+    <li class="active">
+        <a href="#map" onclick="displayMap()">监控地图</a>
+    </li>
+    <li>
+        <a href="#task" onclick="displayTaskInfo()">任务记录查询</a>
+    </li>
+    <li>
+        <a href="#errInfo" onclick="displayErrInfo()">异常信息查询</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane active" id="map">
+        显示监控地图
+    </div>
+    <div class="tab-pane" id="task">
+        <div style="background-color: hsl(207, 86%, 52%);padding-top: 10px;padding-bottom: 10px;">
+            <div style="float: left;">
+                <span>小车编号：</span>
+                <select id="taskCarIds">
+                    <option value="0">全部</option>
+                </select>
+                <span>任务类型：</span>
+                <select id="taskType">
+                    <option value="0">全部</option>
+                </select>
+            </div>
+            <div style="text-align: right;" id="taskBtns">
+                <button class="btn btn-default"  onclick="deleteTaskInfo()">
+                    删除
+                </button>
+                <button class="btn btn-default"  onclick="queryTaskInfo()">
+                    查询
+                </button>
+                <button class="btn btn-default">
+                    导出
+                </button>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>Agv编号</th>
+                    <th>任务名称</th>
+                    <th>任务内容</th>
+                    <th>完成时间</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="tab-pane" id="errInfo">
+        <div style="background-color: hsl(207, 86%, 52%);padding-top: 10px;padding-bottom: 10px;">
+            <div style="float: left;">
+                <span>小车编号：</span>
+                <select id="abCarIds">
+                    <option value="0">全部</option>
+                </select>
+                <span>异常类型：</span>
+                <select id="errType">
+                    <option value="0">全部</option>
+                    <option>正常</option>
+                    <option>脱轨异常</option>
+                    <option>低电压异常</option>
+                    <option>机械碰撞异常</option>
+                    <option>驱动器异常</option>
+                    <option>路径检测异常</option>
+                    <option>路径设置异常</option>
+                    <option>急停按下</option>
+                    <option>驱动升降异常</option>
+                    <option>牵引升降异常</option>
+                    <option>充电异常</option>
+                    <option>掉线</option>
+                    <option>其他异常</option>
+                </select>
+                <span>Rfid编号：</span>
+                <input type="text" id="rfid">
+            </div>
+            <div style="text-align: right;" id="errBtns">
+                <button class="btn btn-default" onclick="deleteAbInfo()">
+                    删除
+                </button>
+                <button class="btn btn-default" onclick="queryAbnormalInfo()">
+                    查询
+                </button>
+                <button class="btn btn-default">
+                    导出
+                </button>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>Agv编号</th>
+                    <th>状态信息</th>
+                    <th>Rfid卡号</th>
+                    <th>发生时间</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="3rdlib/jquery/jquery-3.3.1.min.js"></script>
+<script src="3rdlib/bootstrap/js/bootstrap.min.js"></script>
+<script src="3rdlib/seajs-3.0.0/dist/sea.js"></script>
+
+<script type="text/javascript">
+    seajs.config({
+        base: "./"
+    });
+seajs.use("js/agv.js");
+</script>
+</body>
+
+</html>
