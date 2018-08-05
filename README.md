@@ -1,5 +1,9 @@
 # agv_master for agv monitoring and managing
 
+# TODO
+## 国际化支持
+## 样式调整
+
 # 监控任务
 
 ## 登录监管系统：用户管理、普通的鉴权处理；

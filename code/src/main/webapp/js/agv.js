@@ -9,9 +9,8 @@ function displayMap() {
 }
 
 function displayTaskInfo(parm) {
-    console.log('click task info');
     $.ajax({
-        url: '/record/taskInfos',
+        url: '/agv/record/taskInfos',
         type: 'GET',
         dataType: 'json',
         async: false,
@@ -45,9 +44,8 @@ function displayTaskInfo(parm) {
 }
 
 function displayErrInfo(parm) {
-    console.log('click error info');
     $.ajax({
-        url: '/record/abnormalInfos',
+        url: '/agv/record/abnormalInfos',
         type: 'GET',
         dataType: 'json',
         async: false,
