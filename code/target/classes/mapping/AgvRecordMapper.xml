@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iooc.agv.mapper.RecordMapper">
+
+    <resultMap id="taskResult" type="com.iooc.agv.model.TaskInfo" />
+    <resultMap id="abnormalResult" type="com.iooc.agv.model.AbnormalInfo" />
+
+    <sql id="queryParm">
+        <where>
+            <if test="carId != null and carId != ''"> and Agv_id = #{carId}</if>
+            <if test="rfidNo != null and carId != ''"> and rfidNo = #{rfidNo}</if>
+            <if test="errType != null and errType != ''"> and statusInfo = #{errType}</if>
+            <if test="taskType != null and taskType != ''"> and taskDescirpt like '%||'#{taskType}'%||'</if>
+            <if test="taskStartTm != null and taskStartTm != '' and taskEndTm != null and taskEndTm != ''"> and #{endTime} >= taskStartTm and taskEndTm >= #{endTime} </if>
+            <if test="abStartTm != null and abStartTm != '' and abEndTm != null and abEndTm != ''"> and #{occurTime} >= abStartTm and abEndTm >= #{occurTime} </if>
+        </where>
+    </sql>
+
+
+	<select id="queryTaskRecord" resultMap="taskResult" parameterType="java.util.HashMap">
+		SELECT * FROM AgvTaskRecord <include refid="queryParm" /> order by Agv_id
+	</select>
+
+    <select id="queryAbnormalRecord" resultMap="abnormalResult" parameterType="java.util.HashMap">
+        SELECT * FROM AgvAbnormalRecord <include refid="queryParm" /> order by Agv_id
+    </select>
+
+</mapper>

@@ -2,6 +2,8 @@ package com.iooc.agv.connection;
 
 import java.util.ArrayList;
 
+import com.iooc.agv.util.Constants;
+
 public class MessageCache {
 	private volatile static MessageCache singleton;
 
@@ -28,7 +30,6 @@ public class MessageCache {
 	
 	private void printRecvByte(ArrayList<Byte> bytes) {
 		for (Byte byte1 : bytes) {
-
 			String temp = Integer.toHexString((byte)byte1 & 0xFF).toUpperCase(); 
 			if (temp.length() == 1) {
 				temp = "0" + temp;
@@ -47,7 +48,7 @@ public class MessageCache {
 		}
 		
 		ArrayList<Byte> oneMsg = _msg.get(0);
-		if (oneMsg.size() != 19) {
+		if (oneMsg.size() != Constants.MESSAGE_BYTE_SIZE) {
 			return false;
 		}
 		

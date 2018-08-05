@@ -9,11 +9,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.iooc.agv.model.AgvPosition;
+import com.iooc.agv.model.AgvState;
 import com.iooc.agv.model.Coordinate;
 @Controller
 @RequestMapping("/state")
 public class AgvStateService {
-	@RequestMapping(value = "/getAgvState", method = RequestMethod.GET)
+	@RequestMapping(value = "/getAgvPosition", method = RequestMethod.GET)
 	public @ResponseBody List<AgvPosition> getAgvPosition() {
 		List<AgvPosition> list = new ArrayList<>();
 		AgvPosition agv = new AgvPosition();
@@ -24,7 +25,7 @@ public class AgvStateService {
 		return list;
 	}
 	
-	public @ResponseBody List<AgvPosition> getAgvRunState() {
+	public @ResponseBody List<AgvState> getAgvRunState() {
 		return null;
 	}
 }
