@@ -5,12 +5,16 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>agv monitor</title>
 
-    <link rel="stylesheet" type="text/css" href="3rdlib/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!--<link rel="stylesheet" type="text/css" href="3rdlib/bootstrap/css/bootstrap.min.css" />-->
+    <link href="css/bootstrap.css"  rel="stylesheet"></link>
+    <link href="css/agvmonitor.css" rel="stylesheet"></link>
 </head>
 
 <body>
-
+   <div id="mainWrapper">
+       <div class="login-container">
+           <div class="login-card">
+               <div class="login-form">
 <ul class="nav nav-tabs" id="myTab">
     <li class="active">
         <a href="#map" onclick="displayMap()">监控地图</a>
@@ -27,7 +31,7 @@
     <div class="tab-pane active" id="map">
         显示监控地图
         <div style="background-color: hsl(207, 86%, 52%);padding-top: 10px;padding-bottom: 10px;">
-            <div style="text-align: left;" id="btnStatus">
+            <div style="text-align: left;margin-left: 5px;" id="btnStatus">
                 <button class="btn btn-default" onclick="queryAgvPosition()">
                     查询
                 </button>
@@ -58,7 +62,7 @@
                     <option value="0">全部</option>
                 </select>
             </div>
-            <div style="text-align: right;" id="taskBtns">
+            <div style="text-align: right;margin-right: 5px" id="taskBtns">
                 <button class="btn btn-default"  onclick="deleteTaskInfo()">
                     删除
                 </button>
@@ -140,7 +144,10 @@
         </table>
     </div>
 </div>
-
+               </div>
+           </div>
+       </div>
+   </div>
 <script src="3rdlib/jquery/jquery-3.3.1.min.js"></script>
 <script src="3rdlib/bootstrap/js/bootstrap.min.js"></script>
 <script src="3rdlib/seajs-3.0.0/dist/sea.js"></script>
