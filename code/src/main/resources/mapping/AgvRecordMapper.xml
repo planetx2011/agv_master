@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>  
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.iooc.agv.mapper.RecordMapper">
+<mapper namespace="com.hogun.agv.mapper.RecordMapper">
 
-    <resultMap id="taskResult" type="com.iooc.agv.model.TaskInfo" />
-    <resultMap id="abnormalResult" type="com.iooc.agv.model.AbnormalInfo" />
+    <resultMap id="taskResult" type="com.hogun.agv.model.TaskInfo" />
+    <resultMap id="abnormalResult" type="com.hogun.agv.model.AbnormalInfo" />
 
     <sql id="queryParm">
         <where>

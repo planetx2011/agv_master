@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>  
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.iooc.agv.mapper.RfidMapper">
+<mapper namespace="com.hogun.agv.mapper.RfidMapper">
 
-	<resultMap id="rfidMap" type="com.iooc.agv.model.RfidInfo">
+	<resultMap id="rfidMap" type="com.hogun.agv.model.RfidInfo">
 		<id column="RfidNo" property="rfidNo" />
 		<result column="RfidX" property="rfidX" />
 		<result column="RfidY" property="rfidY" />
@@ -17,7 +17,7 @@
 		SELECT RfidNo, RfidX, RfidY FROM RfidToCoordinate WHERE RfidNo = #{rfidNo} 
 	</select>
 	
-	<insert id="insertRfid" parameterType="com.iooc.agv.model.RfidInfo">
+	<insert id="insertRfid" parameterType="com.hogun.agv.model.RfidInfo">
 		INSERT INTO RfidToCoordinate (RfidNo, RfidX, RfidY)  values(#{rfidNo}, #{rfidX}, #{rfidY})
 	</insert>
 	

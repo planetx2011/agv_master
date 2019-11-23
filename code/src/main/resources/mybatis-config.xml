@@ -4,6 +4,6 @@
     "http://mybatis.org/dtd/mybatis-3-config.dtd">  
 <configuration>  
     <mappers>  
-        <mapper resource="com/iooc/agv/mapper/UserMapper.xml"/>  
+        <mapper resource="com/hogun/agv/mapper/UserMapper.xml"/>  
     </mappers>  
 </configuration>

@@ -26,6 +26,25 @@
 <div class="tab-content">
     <div class="tab-pane active" id="map">
         显示监控地图
+        <div style="background-color: hsl(207, 86%, 52%);padding-top: 10px;padding-bottom: 10px;">
+            <div style="text-align: left;" id="btnStatus">
+                <button class="btn btn-default" onclick="queryAgvPosition()">
+                    查询
+                </button>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Agv编号</th>
+                    <th>坐标X</th>
+                    <th>坐标Y</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
     </div>
     <div class="tab-pane" id="task">
         <div style="background-color: hsl(207, 86%, 52%);padding-top: 10px;padding-bottom: 10px;">

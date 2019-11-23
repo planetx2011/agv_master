@@ -43,6 +43,30 @@ function displayTaskInfo(parm) {
     });
 }
 
+function displayAgvInfo(parm) {
+    $.ajax({
+        url: '/agv/state/getAgvPosition',
+        type: 'GET',
+        dataType: 'json',
+        async: false,
+        data:{},
+        success: function (data) {
+            //请求成功后执行的代码
+            console.log('get task info success.');
+            let tableHtml = "";
+            data.forEach(element => {
+                tableHtml += '<tr><td>' + element.id + '</td><td>' + element.coordinate.x + '</td><td>' + element.coordinate.y + '</td></tr>'
+            });
+            
+            $('#map table tbody').html(tableHtml);
+        },
+        error: function (e) {
+            //失败后执行的代码
+            console.log('get task info failed.' + e);
+        }
+    });
+}
+
 function displayErrInfo(parm) {
     $.ajax({
         url: '/agv/record/abnormalInfos',
@@ -78,6 +102,12 @@ function displayErrInfo(parm) {
         }
     });
 
+}
+
+function queryAgvPosition() {
+    const parm = {
+    }
+    displayAgvInfo(parm);
 }
 
 function queryTaskInfo() {

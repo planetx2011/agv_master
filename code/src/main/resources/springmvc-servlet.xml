@@ -11,9 +11,7 @@
 
 	<!-- 注册HandlerMapper、HandlerAdapter两个映射类 <mvc:annotation-driven /> -->
 	<!-- 配置扫描的包 -->
-	<context:component-scan base-package="com.iooc.agv.service,com.iooc.agv.servlet" />
-
-
+	<context:component-scan base-package="com.hogun.agv.service,com.hogun.agv.servlet" />
 
 	<!-- 访问静态资源 -->
 	<mvc:default-servlet-handler />
