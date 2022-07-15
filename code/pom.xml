@@ -76,7 +76,7 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>2.5.4</version>
+			<version>2.12.6.1</version>
 		</dependency>
 		<!-- servlet采用常见的接受请求和生成响应的编程模型 ,由sun公司开发的 -->
 		<dependency>
